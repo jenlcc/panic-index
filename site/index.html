@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0a0e14">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<title>恐慌指数</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="app">
+
+  <div class="ptr" id="ptr"><span id="ptrText">下拉刷新</span></div>
+
+  <div class="tabs">
+    <div class="tab on" id="tabVIX" data-k="VIX">
+      <div class="t-name">VIX</div>
+      <div class="t-sub">标普500恐慌指数</div>
+      <div class="t-val" id="tabValVIX">--.--</div>
+    </div>
+    <div class="tab" id="tabVXN" data-k="VXN">
+      <div class="t-name">VXN</div>
+      <div class="t-sub">纳指恐慌指数</div>
+      <div class="t-val" id="tabValVXN">--.--</div>
+    </div>
+  </div>
+
+  <div class="panel" id="panel">
+    <div class="top-row">
+      <div>
+        <div class="val loading" id="val">--.--</div>
+        <div class="badge-row">
+          <span class="dot" id="dot"></span>
+          <span id="state">连接中…</span>
+          <span class="sep">·</span>
+          <span id="mkt">—</span>
+        </div>
+      </div>
+      <div class="val-side">
+        <div class="chg flat" id="chg">—</div>
+        <div class="chg-sub" id="chgSub">昨收 —</div>
+      </div>
+    </div>
+
+    <div class="gauge">
+      <div class="g-track" id="gTrack"></div>
+      <div class="g-marker" id="gMarker" style="left:0"></div>
+      <div id="gLabels"></div>
+    </div>
+
+    <div class="zone" id="zone">正在匹配区间…</div>
+
+    <div class="advice" id="advice" style="border-left-color:var(--line)">
+      <div class="a-act" id="aAct">—</div>
+      <div class="a-body">
+        <div class="a-note" id="aNote">—</div>
+        <div class="a-next" id="aNext"></div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="k">今开</div><div class="v" id="stOpen">—</div></div>
+      <div class="stat"><div class="k">最高</div><div class="v" id="stHigh">—</div></div>
+      <div class="stat"><div class="k">最低</div><div class="v" id="stLow">—</div></div>
+      <div class="stat"><div class="k">昨收</div><div class="v" id="stPrev">—</div></div>
+    </div>
+
+    <div class="cmp" id="cmp"></div>
+
+    <div class="banner" id="banner"></div>
+
+    <div class="foot">
+      <div class="meta">
+        <div id="qtime">行情时间 —</div>
+        <div id="tick">下一跳 —</div>
+      </div>
+      <button class="btn on" id="autoBtn">自动开</button>
+      <button class="btn" id="refreshBtn">刷新</button>
+    </div>
+  </div>
+
+  <button class="more" id="more">展开全部区间 ▾</button>
+  <div class="rules" id="rules"></div>
+
+  <div class="disc">风险提示：两项均为反向情绪指标，仅供参考，不构成投资建议；极端行情需结合趋势判断并保留现金。</div>
+</div>
+
+<script src="app.js"></script>
+<script src="ui.js"></script>
+<script src="boot.js"></script>
+</body>
+</html>
