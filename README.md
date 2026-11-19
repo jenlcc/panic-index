@@ -10,3 +10,5 @@
 - 支持 #VIX / #VXN 深链接
 
 数据源：CNBC 报价（主）、TradingView scanner（备）。仅供参考，不构成投资建议。
+
+部署：GitHub Actions → Pages（工件目录 site/）。
